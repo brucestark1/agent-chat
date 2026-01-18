@@ -14,7 +14,7 @@ This project implements a complete **tool-using agent loop** with:
 
 ### Prerequisites
 
-- Python 3.11+
+- Python 3.14+ (latest stable)
 - macOS (as specified, but works on Linux too)
 - Optional: Anthropic API key (falls back to MockModel)
 
@@ -233,7 +233,7 @@ Perfect for building responsive UIs that show the agent's "thinking process".
 
 ## Technology Stack
 
-- **Python 3.11** - Modern Python with type hints
+- **Python 3.14** - Latest stable with free-threading & JIT compiler
 - **FastAPI** - High-performance async web framework
 - **SQLAlchemy 2.0** - Modern ORM with type safety
 - **Pydantic v2** - Data validation and settings
@@ -254,12 +254,19 @@ All tools are **state-of-the-art as of 2026**:
 
 ## Learning More
 
-See **[LEARN.md](LEARN.md)** for:
+**[LEARN.md](LEARN.md)** - Comprehensive learning guide:
 - Deep dive into agentic workflow concepts
 - How the ReAct pattern works
 - Tool use best practices
 - Production considerations
 - Further reading
+
+**[QUICKREF.md](QUICKREF.md)** - Quick reference cheatsheet:
+- Core terminology and concepts
+- Common commands and API calls
+- Anti-patterns to avoid
+- Debugging tips and troubleshooting
+- One-sentence reminders
 
 ## License
 

@@ -2,7 +2,7 @@
 name = "agent-chat"
 version = "0.1.0"
 description = "Agentic Chat Loop MVP - Learn by building a production-quality agent system"
-requires-python = ">=3.11"
+requires-python = ">=3.14"
 dependencies = [
     "fastapi>=0.109.0",
     "uvicorn[standard]>=0.27.0",
@@ -40,7 +40,7 @@ addopts = "-v --cov=agent_chat --cov-report=term-missing"
 
 [tool.ruff]
 line-length = 100
-target-version = "py311"
+target-version = "py314"
 src = ["src", "tests"]
 
 [tool.ruff.lint]
@@ -64,7 +64,7 @@ indent-style = "space"
 [tool.pyright]
 include = ["src", "tests"]
 exclude = ["**/__pycache__"]
-pythonVersion = "3.11"
+pythonVersion = "3.14"
 typeCheckingMode = "standard"
 reportMissingTypeStubs = false
 reportUnknownMemberType = false

@@ -10,7 +10,7 @@ from agent_chat.db.models import Base, Customer, Ticket
 
 
 @pytest.fixture
-def test_db() -> Generator[Session, None, None]:
+def test_db() -> Generator[Session]:
     """Create a clean in-memory database for testing."""
     engine = create_engine("sqlite:///:memory:")
     Base.metadata.create_all(engine)

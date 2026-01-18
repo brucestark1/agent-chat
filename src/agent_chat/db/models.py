@@ -1,5 +1,7 @@
 """SQLAlchemy ORM models for persistence."""
 
+from __future__ import annotations
+
 from datetime import datetime
 from typing import Any
 
@@ -25,10 +27,10 @@ class Thread(Base):
     )
 
     # Relationships
-    messages: Mapped[list["Message"]] = relationship(
+    messages: Mapped[list[Message]] = relationship(
         back_populates="thread", cascade="all, delete-orphan"
     )
-    runs: Mapped[list["Run"]] = relationship(back_populates="thread", cascade="all, delete-orphan")
+    runs: Mapped[list[Run]] = relationship(back_populates="thread", cascade="all, delete-orphan")
 
 
 class Message(Base):
@@ -43,7 +45,7 @@ class Message(Base):
     created_at: Mapped[datetime] = mapped_column(server_default=text("CURRENT_TIMESTAMP"))
 
     # Relationships
-    thread: Mapped["Thread"] = relationship(back_populates="messages")
+    thread: Mapped[Thread] = relationship(back_populates="messages")
 
 
 class Run(Base):
@@ -62,8 +64,8 @@ class Run(Base):
     completed_at: Mapped[datetime | None] = mapped_column(nullable=True)
 
     # Relationships
-    thread: Mapped["Thread"] = relationship(back_populates="runs")
-    tool_calls: Mapped[list["ToolCall"]] = relationship(
+    thread: Mapped[Thread] = relationship(back_populates="runs")
+    tool_calls: Mapped[list[ToolCall]] = relationship(
         back_populates="run", cascade="all, delete-orphan"
     )
 
@@ -83,7 +85,7 @@ class ToolCall(Base):
     created_at: Mapped[datetime] = mapped_column(server_default=text("CURRENT_TIMESTAMP"))
 
     # Relationships
-    run: Mapped["Run"] = relationship(back_populates="tool_calls")
+    run: Mapped[Run] = relationship(back_populates="tool_calls")
 
 
 # Seed data tables (simple key-value stores)
@@ -116,4 +118,4 @@ class Ticket(Base):
     )
 
     # Relationships
-    customer: Mapped["Customer"] = relationship()
+    customer: Mapped[Customer] = relationship()

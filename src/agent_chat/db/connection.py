@@ -27,7 +27,7 @@ def drop_db() -> None:
 
 
 @contextmanager
-def get_db() -> Generator[Session, None, None]:
+def get_db() -> Generator[Session]:
     """Get a database session with automatic cleanup.
 
     Usage:
